@@ -11,6 +11,7 @@ import java.util.List;
 public class CharacterService {
     CharacterRepository characterRepository;
 
+    @Autowired
     public CharacterService(CharacterRepository characterRepository) {
         this.characterRepository = characterRepository;
     }
