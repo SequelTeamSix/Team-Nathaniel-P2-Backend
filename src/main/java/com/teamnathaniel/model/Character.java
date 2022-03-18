@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Character")
@@ -19,13 +20,15 @@ public class Character {
     @Id
     private int characterId;
     @Column
-    private String name;
+    private String characterName;
     @Column
     private String description;
     @Column
     private String image;
-    //inquire tomorrow about this
+    @Column
+    private String catchPhrase;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "seriesId")
-    private Series series;
+    private List<Series> series;
 }

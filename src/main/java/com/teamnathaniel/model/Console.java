@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Console")
@@ -22,11 +23,10 @@ public class Console {
     private String name;
     @Column
     private String releaseDate;
-    /*
-    multiplicity relationship for Game
+
     @ManyToMany(fetch =  FetchType.EAGER)
     @JoinColumn(name = "gameId")
-    private Game game;
-    */
+    private List<Game> game;
+
 
 }

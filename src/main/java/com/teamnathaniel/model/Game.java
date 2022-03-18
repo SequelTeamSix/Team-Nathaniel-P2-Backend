@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Game")
@@ -34,9 +35,9 @@ public class Game {
     @ManyToOne(fetch =  FetchType.EAGER)
     @JoinColumn(name = "seriesId")
     private Series series;
-    //inquire about Console M2M relationship
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "consoleId")
-    private Console console;
+    private List<Console> console;
 
 }
