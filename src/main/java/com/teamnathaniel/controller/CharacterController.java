@@ -43,9 +43,9 @@ public class CharacterController {
         return true;
     }
 
-    @PutMapping("updateCharacter")
-    public void updateCharacter(@RequestBody Character character) {
-        characterService.updateCharacter(character);
+    @PutMapping("updateCharacter/{characterId}")
+    public Character updateCharacter(@PathVariable int characterId, @RequestBody Character character) {
+        return characterService.updateCharacter(characterId, character);
     }
 
 }

@@ -11,7 +11,6 @@ import java.util.List;
 public class CharacterService {
     CharacterRepository characterRepository;
 
-    @Autowired
     public CharacterService(CharacterRepository characterRepository) {
         this.characterRepository = characterRepository;
     }
@@ -36,19 +35,28 @@ public class CharacterService {
         return characterRepository.findById(id);
     }
 
-    public void updateCharacter(Character character){
+    public Character updateCharacter(int characterId, Character character){
+        Character oldChar = characterRepository.findById(characterId);
         //if character is in DB, update the requested info based on provided
-        if(characterRepository.findAll().contains(character))
-        {
-            character.setCharacterId(character.getCharacterId());
-            character.setCharacterName(character.getCharacterName());
-            character.setDescription(character.getDescription());
-            character.setImage(character.getImage());
-            character.setCatchPhrase(character.getCatchPhrase());
+        if (oldChar != null) {
+            character.setCharacterId(oldChar.getCharacterId());
+            if (character.getCharacterName() != null) {
+                oldChar.setCharacterName(character.getCharacterName());
+            }
+            if (character.getDescription() != null) {
+                oldChar.setDescription(character.getDescription());
+            }
+            if (character.getCatchPhrase() != null) {
+                oldChar.setCatchPhrase(character.getCatchPhrase());
+            }
+            if (character.getImage() != null) {
+                oldChar.setImage(character.getImage());
+            }
+            return saveCharacter(oldChar);
         }
-        //character isn't in DB, go ahead and create one with provided info.
+        // character isn't in DB, go ahead and create one with provided info.
         else {
-            saveCharacter(character);
+            return saveCharacter(character);
         }
     }
 }
