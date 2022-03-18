@@ -4,8 +4,10 @@ import com.teamnathaniel.model.Character;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
+@Transactional
 public interface CharacterRepository extends JpaRepository<Character, String> {
 
     @Query("From Character")
@@ -19,7 +21,7 @@ public interface CharacterRepository extends JpaRepository<Character, String> {
 
     Character save(Character character);
 
-    void delete(Character character);
+    void deleteByCharacterId(int characterId);
 
     //@Query("select catchPhrase from Character where characterName = :name")
     //String getCharacterCatchPhrase(String name);

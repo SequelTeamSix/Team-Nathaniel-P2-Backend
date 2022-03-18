@@ -36,16 +36,16 @@ public class CharacterController {
         return characterService.findCharacterByName(name);
     }
 
-    @DeleteMapping("deleteCharacter/{Character}")
-    public boolean deleteCharacter(@PathVariable Character character) {
-        characterService.deleteCharacter(character);
-        System.out.println(character.toString() + " was deleted.");
+    @DeleteMapping("deleteCharacter/{characterId}")
+    public boolean deleteCharacter(@PathVariable int characterId) {
+        characterService.deleteCharacter(characterId);
+        System.out.println("Character with Id " + characterId + " was deleted.");
         return true;
     }
 
-    @PutMapping("updateCharacter")
-    public void updateCharacter(@RequestBody Character character) {
-        characterService.updateCharacter(character);
+    @PutMapping("updateCharacter/{characterId}")
+    public Character updateCharacter(@PathVariable int characterId, @RequestBody Character character) {
+        return characterService.updateCharacter(characterId, character);
     }
 
 }
