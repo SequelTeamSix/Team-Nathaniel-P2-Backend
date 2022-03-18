@@ -36,10 +36,10 @@ public class CharacterController {
         return characterService.findCharacterByName(name);
     }
 
-    @DeleteMapping("deleteCharacter/{Character}")
-    public boolean deleteCharacter(@PathVariable Character character) {
-        characterService.deleteCharacter(character);
-        System.out.println(character.toString() + " was deleted.");
+    @DeleteMapping("deleteCharacter/{characterId}")
+    public boolean deleteCharacter(@PathVariable int characterId) {
+        characterService.deleteCharacter(characterId);
+        System.out.println("Character with Id " + characterId + " was deleted.");
         return true;
     }
 

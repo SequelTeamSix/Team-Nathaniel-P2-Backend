@@ -2,6 +2,7 @@ package com.teamnathaniel.service;
 
 import com.teamnathaniel.model.Character;
 import com.teamnathaniel.repository.CharacterRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 public class CharacterService {
     CharacterRepository characterRepository;
 
+    @Autowired
     public CharacterService(CharacterRepository characterRepository) {
         this.characterRepository = characterRepository;
     }
@@ -26,8 +28,8 @@ public class CharacterService {
         return characterRepository.findByName(name);
     }
 
-    public void deleteCharacter(Character character){
-        characterRepository.delete(character);
+    public void deleteCharacter(int characterId){
+        characterRepository.deleteByCharacterId(characterId);
     }
 
     public Character findCharacterById(int id){
