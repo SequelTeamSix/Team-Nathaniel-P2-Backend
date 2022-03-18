@@ -21,7 +21,4 @@ public interface CharacterRepository extends JpaRepository<Character, String> {
 
     void delete(Character character);
 
-    //@Query("select catchPhrase from Character where characterName = :name")
-    //String getCharacterCatchPhrase(String name);
-
 }

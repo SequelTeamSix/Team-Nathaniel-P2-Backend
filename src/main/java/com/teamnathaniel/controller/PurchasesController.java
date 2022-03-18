@@ -1,4 +1,4 @@
 package com.teamnathaniel.controller;
 
-public class OrderController {
+public class PurchasesController {
 }

@@ -31,12 +31,12 @@ public class CharacterController {
         return characterService.findCharacterById(id);
     }
 
-    @GetMapping("CharacterName/{name}")
+    @GetMapping("characterName/{name}")
     public Character findCharacterByName(@PathVariable String name) {
         return characterService.findCharacterByName(name);
     }
 
-    @DeleteMapping("deleteCharacter/{Character}")
+    @DeleteMapping("deleteCharacter/{character}")
     public boolean deleteCharacter(@PathVariable Character character) {
         characterService.deleteCharacter(character);
         System.out.println(character.toString() + " was deleted.");
