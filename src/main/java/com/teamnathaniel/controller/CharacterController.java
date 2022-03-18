@@ -9,43 +9,43 @@ import java.util.List;
 
 @RestController
 public class CharacterController {
-    CharacterService CharacterService;
+    CharacterService characterService;
 
     @Autowired
-    public CharacterController(CharacterService CharacterService) {
-        this.CharacterService = CharacterService;
+    public CharacterController(CharacterService characterService) {
+        this.characterService = characterService;
     }
 
     @GetMapping("getAllCharacters")
     public List<Character> getAllCharacters() {
-        return CharacterService.getAllCharacters();
+        return characterService.getAllCharacters();
     }
 
     @PostMapping("saveCharacter")
-    public Character createCharacter(@RequestBody Character Character) {
-        return CharacterService.saveCharacter(Character);
+    public Character createCharacter(@RequestBody Character character) {
+        return characterService.saveCharacter(character);
     }
 
     @GetMapping("findChar/{id}")
     public Character findCharacterById(@PathVariable int id) {
-        return CharacterService.findCharacterById(id);
+        return characterService.findCharacterById(id);
     }
 
     @GetMapping("CharacterName/{name}")
     public Character findCharacterByName(@PathVariable String name) {
-        return CharacterService.findCharacterByName(name);
+        return characterService.findCharacterByName(name);
     }
 
     @DeleteMapping("deleteCharacter/{Character}")
-    public boolean deleteCharacter(@PathVariable Character Character) {
-        CharacterService.deleteCharacter(Character);
-        System.out.println(Character.toString() + " was deleted.");
+    public boolean deleteCharacter(@PathVariable Character character) {
+        characterService.deleteCharacter(character);
+        System.out.println(character.toString() + " was deleted.");
         return true;
     }
 
     @PutMapping("updateCharacter")
-    public void updateCharacter(@RequestBody Character Character) {
-        CharacterService.updateCharacter(Character);
+    public void updateCharacter(@RequestBody Character character) {
+        characterService.updateCharacter(character);
     }
 
 }
