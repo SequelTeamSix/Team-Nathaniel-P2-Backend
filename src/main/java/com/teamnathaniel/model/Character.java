@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @ToString
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "characterId")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "characterName")
 public class Character {
 
     @Id

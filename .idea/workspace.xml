@@ -5,24 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="954de9a8-9f30-4a03-8f8f-b9efa67f0167" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/controller/CharacterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/controller/PurchasesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/GameOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/GameOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Purchases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Series.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Series.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/CharacterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/CharacterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/PurchasesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/PurchasesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/GameRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/CharacterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/CharacterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/teamnathaniel/controller/CharacterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/teamnathaniel/controller/CharacterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/teamnathaniel/model/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/teamnathaniel/model/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/teamnathaniel/repository/GameRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/teamnathaniel/repository/GameRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/teamnathaniel/service/CharacterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/teamnathaniel/service/CharacterService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +51,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
