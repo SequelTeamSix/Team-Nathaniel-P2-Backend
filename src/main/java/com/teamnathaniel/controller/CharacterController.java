@@ -26,6 +26,11 @@ public class CharacterController {
         return CharacterService.saveCharacter(Character);
     }
 
+    @GetMapping("findChar/{id}")
+    public Character findCharacterById(@PathVariable int id) {
+        return CharacterService.findCharacterById(id);
+    }
+
     @GetMapping("CharacterName/{name}")
     public Character findCharacterByName(@PathVariable String name) {
         return CharacterService.findCharacterByName(name);

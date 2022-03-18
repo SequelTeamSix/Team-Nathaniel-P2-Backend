@@ -17,11 +17,11 @@ public interface CharacterRepository extends JpaRepository<Character, String> {
     @Query("from Character where characterId = :id")
     Character findById(int id);
 
-//    @Query("select catchPhrase from Character where characterName = :name")
-//    String getCharacterCatchPhrase(String name);
-
     Character save(Character character);
 
     void delete(Character character);
+
+    //@Query("select catchPhrase from Character where characterName = :name")
+    //String getCharacterCatchPhrase(String name);
 
 }

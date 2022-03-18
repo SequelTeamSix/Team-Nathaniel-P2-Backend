@@ -30,6 +30,10 @@ public class CharacterService {
         characterRepository.delete(character);
     }
 
+    public Character findCharacterById(int id){
+        return characterRepository.findById(id);
+    }
+
     public void updateCharacter(Character character){
         //if character is in DB, update the requested info based on provided
         if(characterRepository.findAll().contains(character))
