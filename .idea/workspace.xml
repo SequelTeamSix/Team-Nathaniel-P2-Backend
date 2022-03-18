@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="954de9a8-9f30-4a03-8f8f-b9efa67f0167" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/GameRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/CharacterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/CharacterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/teamnathaniel/controller/CharacterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/teamnathaniel/controller/CharacterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/teamnathaniel/model/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/teamnathaniel/model/Character.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/teamnathaniel/repository/GameRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/teamnathaniel/repository/GameRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/teamnathaniel/service/CharacterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/teamnathaniel/service/CharacterService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
