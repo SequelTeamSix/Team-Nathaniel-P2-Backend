@@ -14,6 +14,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.mockito.ArgumentMatchers.any;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -102,6 +103,13 @@ class CharacterControllerTest {
     }
 
     @Test
-    void updateCharacter() {
+    void updateCharacter() throws Exception {
+        when(sErViCe.updateCharacter(any(Integer.class), any(Character.class))).thenReturn(link);
+        this.mockMvc.perform(put("/updateCharacter/0")
+                        .content("{\"characterName\":\"Link\",\"description\":\"The hero of Hyrule\", \"image\":\"https://upload.wikimedia.org/wikipedia/en/2/21/Link_of_the_Wild.png\", \"catchPhrase\" : \"Hyup!\", \"series\": [] }")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().json("{\"characterName\":\"Link\",\"description\":\"The hero of Hyrule\", \"image\":\"https://upload.wikimedia.org/wikipedia/en/2/21/Link_of_the_Wild.png\", \"catchPhrase\" : \"Hyup!\", \"series\": [] }"));
     }
 }
