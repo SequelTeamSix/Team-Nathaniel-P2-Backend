@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="954de9a8-9f30-4a03-8f8f-b9efa67f0167" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/controller/ConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/controller/ConsoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Console.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/ConsoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/ConsoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/ConsoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/ConsoleService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
