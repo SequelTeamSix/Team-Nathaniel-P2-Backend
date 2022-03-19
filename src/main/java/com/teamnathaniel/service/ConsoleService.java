@@ -38,7 +38,7 @@ public class ConsoleService {
 
     public Console updateConsole(int characterId, Console console){
         Console oldConsole = consoleRepository.findById(characterId);
-        //if character is in DB, update the requested info based on provided
+        //if console is in DB, update the requested info based on provided
         if (oldConsole != null) {
             console.setConsoleId(console.getConsoleId());
             if (console.getConsoleName() != null) {
@@ -48,7 +48,7 @@ public class ConsoleService {
                 oldConsole.setReleaseDate(oldConsole.getReleaseDate());
             }
         }
-        // character isn't in DB, go ahead and create one with provided info.
+        // console isn't in DB, go ahead and create one with provided info.
         return saveConsole(console);
     }
 }
