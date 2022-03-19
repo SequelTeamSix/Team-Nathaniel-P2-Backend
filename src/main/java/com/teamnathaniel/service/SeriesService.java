@@ -27,25 +27,29 @@ public class SeriesService {
         return seriesRepository.findByName(name);
     }
 
-    public void deleteSeries(Series Series){
-        seriesRepository.delete(Series);
+    public void deleteSeries(int seriesId){
+        seriesRepository.deleteBySeriesId(seriesId);
     }
 
     public Series findSeriesById(int id){
         return seriesRepository.findById(id);
     }
 
-    public void updateSeries(Series series){
+    public Series updateSeries(int seriesId, Series series){
+        Series oldSeries = seriesRepository.findById(seriesId);
         //if Series is in DB, update the requested info based on provided
-        if(seriesRepository.findAll().contains(series))
-        {
-            series.setSeriesId(series.getSeriesId());
-            series.setName(series.getName());
-            series.setDescription(series.getDescription());
+        if(oldSeries != null) {
+            if (series.getName() != null) {
+                oldSeries.setName(series.getName());
+            }
+            if (series.getDescription() != null) {
+                oldSeries.setDescription(series.getDescription());
+            }
+            return saveSeries(oldSeries);
         }
         //Series isn't in DB, go ahead and create one with provided info.
         else {
-            saveSeries(series);
+            return saveSeries(series);
         }
     }
 }

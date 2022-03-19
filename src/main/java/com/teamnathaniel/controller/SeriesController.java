@@ -36,16 +36,16 @@ public class SeriesController {
         return seriesService.findSeriesByName(name);
     }
 
-    @DeleteMapping("deleteSeries/{series}")
-    public boolean deleteSeries(@PathVariable Series series) {
-        seriesService.deleteSeries(series);
-        System.out.println(series.toString() + " was deleted.");
+    @DeleteMapping("deleteSeries/{seriesId}")
+    public boolean deleteSeries(@PathVariable int seriesId) {
+        seriesService.deleteSeries(seriesId);
+        System.out.println("Series with Id " + seriesId + " was deleted.");
         return true;
     }
 
-    @PutMapping("updateSeries")
-    public void updateSeries(@RequestBody Series series) {
-        seriesService.updateSeries(series);
+    @PutMapping("updateSeries/{seriesId}")
+    public Series updateSeries(@PathVariable int seriesId, @RequestBody Series series) {
+        return seriesService.updateSeries(seriesId, series);
     }
 
 }
