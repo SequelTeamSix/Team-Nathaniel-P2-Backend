@@ -1,4 +1,4 @@
 package com.teamnathaniel.controller;
 
-public class UserController {
+public class CustomerController {
 }

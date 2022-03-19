@@ -8,21 +8,20 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Order")
+@Table(name = "Customer")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @ToString
 //tentatively include json identity, maybe
-public class Order {
+public class Customer {
 
     @Id
-    private int orderId;
+    private int customerId;
     @Column
-    private String orderDate;
-    //multiplicity relationship for User
-    @ManyToOne(fetch =  FetchType.EAGER)
-    @JoinColumn(name = "userId")
-    private User user;
-
+    private String username;
+    @Column
+    private String password;
+    @Column
+    private String name;
 }

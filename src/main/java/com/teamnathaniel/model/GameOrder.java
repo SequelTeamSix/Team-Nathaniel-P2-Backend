@@ -20,12 +20,12 @@ public class GameOrder {
     private int gameOrderId;
     @Column
     private int quantity;
-    //multiplicity relationships for Game and Order
+    //multiplicity relationships for Game and Purchases
     @ManyToOne(fetch =  FetchType.EAGER)
     @JoinColumn(name = "gameId")
     private Game game;
     @ManyToOne(fetch =  FetchType.EAGER)
-    @JoinColumn(name = "orderId")
-    private Order Order;
+    @JoinColumn(name = "purchasesId")
+    private Purchases purchases;
 
 }

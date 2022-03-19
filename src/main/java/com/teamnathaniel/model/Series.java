@@ -27,7 +27,4 @@ public class Series {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "characterId")
     private List<Character> character;
-
-
-
 }

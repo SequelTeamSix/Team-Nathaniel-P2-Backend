@@ -1,4 +1,4 @@
 package com.teamnathaniel.service;
 
-public class OrderService {
+public class CustomerService {
 }
