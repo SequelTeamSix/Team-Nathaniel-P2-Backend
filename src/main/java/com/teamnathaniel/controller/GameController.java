@@ -12,7 +12,6 @@ public class GameController {
     GameService gameService;
 
     @Autowired
-
     public GameController(GameService gameService) {
         this.gameService = gameService;
     }
@@ -48,4 +47,5 @@ public class GameController {
     public Game updateGame(@PathVariable int gameId, @RequestBody Game game){
         return gameService.saveGame(game);
     }
+
 }
