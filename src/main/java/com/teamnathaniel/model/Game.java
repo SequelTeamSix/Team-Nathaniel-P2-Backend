@@ -18,9 +18,10 @@ import java.util.List;
 public class Game {
 
     @Id
+    @GeneratedValue
     private int gameId;
     @Column
-    private int title;
+    private String title;
     @Column
     private String releaseDate;
     @Column

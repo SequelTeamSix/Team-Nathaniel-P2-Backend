@@ -14,10 +14,10 @@ public interface GameRepository extends JpaRepository<Game, Integer> {
     @Query("From Game")
     List<Game> findAll();
 
-    @Query("from Game where GameName = :name")
+    @Query("from Game where title = :name")
     Game findByName(String name);
 
-    @Query("from Game where GameId = :id")
+    @Query("from Game where gameId = :id")
     Game findById(int id);
 
     Game save(Game Game);
