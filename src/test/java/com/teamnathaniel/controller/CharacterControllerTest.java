@@ -88,7 +88,7 @@ class CharacterControllerTest {
     @Test
     void findCharacterByName() throws Exception {
         when(sErViCe.findCharacterByName(any(String.class))).thenReturn(link);
-        this.mockMvc.perform(get("/CharacterName/Link"))
+        this.mockMvc.perform(get("/characterName/Link"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().json("{\"characterName\":\"Link\",\"description\":\"The hero of Hyrule\", \"image\":\"https://upload.wikimedia.org/wikipedia/en/2/21/Link_of_the_Wild.png\", \"catchPhrase\" : \"Hyup!\", \"series\": []}"));

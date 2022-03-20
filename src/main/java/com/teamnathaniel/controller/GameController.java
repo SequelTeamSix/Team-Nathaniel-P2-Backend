@@ -12,7 +12,6 @@ public class GameController {
     GameService gameService;
 
     @Autowired
-
     public GameController(GameService gameService) {
         this.gameService = gameService;
     }
@@ -37,10 +36,11 @@ public class GameController {
         return gameService.findGameByName(name);
     }
 
-    @DeleteMapping("deleteCharacter/{gameId}")
-    public boolean deleteCharacter(@PathVariable int gameId){
+    @DeleteMapping("deleteGame/{gameId}")
+    public boolean deleteGame(@PathVariable int gameId){
         gameService.deleteGame(gameId);
         System.out.println("Game with Id " + gameId + " was deleted.");
         return true;
     }
+    // TODO should there be an update endpoint here?
 }
