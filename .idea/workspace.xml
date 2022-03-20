@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="954de9a8-9f30-4a03-8f8f-b9efa67f0167" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/controller/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/controller/ReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/ReviewRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/ConsoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/ConsoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/ReviewService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
