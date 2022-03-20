@@ -11,6 +11,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -36,6 +37,8 @@ class CharacterControllerTest {
 
     private List<Character> characters;
     private Character link;
+
+    private static boolean deleteCalled = false;
 
     @BeforeEach
     public void sEtUp() {
@@ -96,10 +99,14 @@ class CharacterControllerTest {
 
     @Test
     void deleteCharacter() throws Exception {
-        Mockito.doNothing().when(sErViCe).deleteCharacter(any(Integer.class));
+        Mockito.doAnswer(invocationOnMock -> {
+            deleteCalled = true;
+            return null;
+        }).when(sErViCe).deleteCharacter(any(Integer.class));
         this.mockMvc.perform(delete("/deleteCharacter/0"))
                 .andDo(print())
                 .andExpect(status().isOk()); // the json parser doesn't want to parse the literal value true, so I can't test the return value of this endpoint
+        assertTrue(deleteCalled);
     }
 
     @Test
