@@ -25,10 +25,16 @@ public class Console {
     private String consoleName;
     @Column
     private String releaseDate;
+    @Column
+    private String logo;
+    @Column
+    private String picture;
 
-    @ManyToMany(fetch =  FetchType.EAGER)
-    @JoinColumn(name = "gameId")
+    //check this out Ethan
+    @ManyToMany(mappedBy = "console")
     private List<Game> game;
 
-
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "consoleFeatureId")
+    private List<ConsoleFeature> consoleFeature;
 }

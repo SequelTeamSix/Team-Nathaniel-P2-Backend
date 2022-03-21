@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "Game")
@@ -38,7 +39,6 @@ public class Game {
     private Series series;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "consoleId")
-    private List<Console> console;
-
+    @JoinTable
+    private Set<Console> console;
 }

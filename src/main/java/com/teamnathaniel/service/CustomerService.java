@@ -37,7 +37,7 @@ public class CustomerService {
     }
 
     public void deleteCustomer(int customerId){
-        customerRepository.deleteCustomerById(customerId);
+        customerRepository.deleteByCustomerId(customerId);
     }
 
     public Customer updateCustomer(int customerId, Customer customer){
