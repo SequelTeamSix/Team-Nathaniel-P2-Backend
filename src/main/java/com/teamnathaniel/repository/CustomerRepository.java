@@ -13,10 +13,10 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     @Query("From Customer")
     List<Customer> findAll();
 
-    @Query("From Customer where customerId = :id")
-    Customer findById(int id);
+    @Query("From Customer where customerId = :customerId")
+    Customer findById(int customerId);
 
     Customer save(Customer customer);
 
-    void deleteCustomerById(int customerId);
+    void deleteByCustomerId(int customerId);
 }

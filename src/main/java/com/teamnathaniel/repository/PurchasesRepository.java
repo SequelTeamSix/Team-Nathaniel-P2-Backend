@@ -18,5 +18,5 @@ public interface PurchasesRepository extends JpaRepository<Purchases, Integer> {
 
     Purchases save(Purchases purchases);
 
-    void deleteByPurchasesId(int reviewId);
+    void deleteByPurchasesId(int purchaseId);
 }
