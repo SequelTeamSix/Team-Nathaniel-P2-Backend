@@ -42,5 +42,10 @@ public class GameController {
         System.out.println("Game with Id " + gameId + " was deleted.");
         return true;
     }
-    // TODO should there be an update endpoint here?
+
+    @PutMapping("updateGame/{gameId}")
+    public Game updateGame(@PathVariable int gameId, @RequestBody Game game){
+        return gameService.saveGame(game);
+    }
+
 }
