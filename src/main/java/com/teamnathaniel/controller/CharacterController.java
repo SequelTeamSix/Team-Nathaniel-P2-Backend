@@ -22,20 +22,25 @@ public class CharacterController {
         return characterService.getAllCharacters();
     }
 
+    @CrossOrigin
     @PostMapping("saveCharacter")
     public Character createCharacter(@RequestBody Character character) {
         return characterService.saveCharacter(character);
     }
 
+    @CrossOrigin
     @GetMapping("findChar/{id}")
     public Character findCharacterById(@PathVariable int id) {
         return characterService.findCharacterById(id);
     }
 
+    @CrossOrigin
     @GetMapping("characterName/{name}")
     public Character findCharacterByName(@PathVariable String name) {
         return characterService.findCharacterByName(name);
     }
+
+    @CrossOrigin
     @DeleteMapping("deleteCharacter/{characterId}")
     public boolean deleteCharacter(@PathVariable int characterId) {
         characterService.deleteCharacter(characterId);
@@ -44,6 +49,7 @@ public class CharacterController {
         return true;
     }
 
+    @CrossOrigin
     @PutMapping("updateCharacter/{characterId}")
     public Character updateCharacter(@PathVariable int characterId, @RequestBody Character character) {
         return characterService.updateCharacter(characterId, character);

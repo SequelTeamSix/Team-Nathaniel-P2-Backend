@@ -16,21 +16,25 @@ public class ReviewController {
         this.reviewService = reviewService;
     }
 
+    @CrossOrigin
     @GetMapping("getAllReviews")
     public List<Review> getAllReviews(){
         return reviewService.getAllReviews();
     }
 
+    @CrossOrigin
     @PostMapping("saveReview")
     public Review createReview(@RequestBody Review review){
         return reviewService.saveReview(review);
     }
 
+    @CrossOrigin
     @GetMapping("findReview/{id}")
     public Review findReviewById(@PathVariable int id){
         return reviewService.findReviewById(id);
     }
 
+    @CrossOrigin
     @DeleteMapping("deleteReview/{reviewId}")
     public boolean deleteReview(@PathVariable int reviewId){
         reviewService.deleteReview(reviewId);
@@ -38,6 +42,7 @@ public class ReviewController {
         return true;
     }
 
+    @CrossOrigin
     @PutMapping("updateReview/{reviewId}")
     public Review updateReview(@PathVariable int reviewId, @RequestBody Review review){
         return reviewService.updateReview(reviewId, review);
