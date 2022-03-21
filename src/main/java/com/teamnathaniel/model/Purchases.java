@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Purchases")
@@ -26,5 +27,9 @@ public class Purchases {
     @ManyToOne(fetch =  FetchType.EAGER)
     @JoinColumn(name = "customerId")
     private Customer customer;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "gameOrderId")
+    private List<GameOrder> gameOrders;
 
 }
