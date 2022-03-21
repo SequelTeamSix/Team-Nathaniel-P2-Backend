@@ -16,6 +16,7 @@ public class CharacterController {
         this.characterService = characterService;
     }
 
+    @CrossOrigin
     @GetMapping("getAllCharacters")
     public List<Character> getAllCharacters() {
         return characterService.getAllCharacters();

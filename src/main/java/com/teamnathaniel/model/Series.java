@@ -21,10 +21,12 @@ public class Series {
     @Column
     private String name;
     @Column
+    private String logo;
+    @Column
     private String description;
 
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "characterId")
+    @JoinTable
     private List<Character> character;
 }
