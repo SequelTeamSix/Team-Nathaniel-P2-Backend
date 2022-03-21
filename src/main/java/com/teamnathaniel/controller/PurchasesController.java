@@ -17,21 +17,25 @@ public class PurchasesController {
         this.purchasesService = purchasesService;
     }
 
+    @CrossOrigin
     @GetMapping("getAllPurchases")
     public List<Purchases> getAllPurchase(){
         return purchasesService.getAllPurchases();
     }
 
+    @CrossOrigin
     @PostMapping("savePurchase")
     public Purchases createPurchase(@RequestBody Purchases purchases){
         return purchasesService.savePurchase(purchases);
     }
 
+    @CrossOrigin
     @GetMapping("findPurchase/{id}")
     public Purchases findPurchaseById(@PathVariable int id){
         return purchasesService.findPurchaseById(id);
     }
 
+    @CrossOrigin
     @DeleteMapping("deletePurchase/{purchaseId}")
     public boolean deletePurchase(@PathVariable int purchaseId){
         purchasesService.deletePurchase(purchaseId);
@@ -39,6 +43,7 @@ public class PurchasesController {
         return true;
     }
 
+    @CrossOrigin
     @PutMapping("updatePurchase/{purchaseId}")
     public Purchases updatePurchase(@PathVariable int purchaseId, @RequestBody Purchases purchases){
         return purchasesService.updatePurchase(purchaseId,purchases);

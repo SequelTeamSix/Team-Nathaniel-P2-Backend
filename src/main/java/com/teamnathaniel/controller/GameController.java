@@ -16,26 +16,31 @@ public class GameController {
         this.gameService = gameService;
     }
 
+    @CrossOrigin
     @GetMapping("getAllGames")
     public List<Game> getAllGames(){
         return gameService.getAllGames();
     }
 
+    @CrossOrigin
     @PostMapping("saveGame")
     public Game createGame(@RequestBody Game game){
         return gameService.saveGame(game);
     }
 
+    @CrossOrigin
     @GetMapping("findGame/{id}")
     public Game findGameById(@PathVariable int id){
         return gameService.findGameById(id);
     }
 
+    @CrossOrigin
     @GetMapping("gameName/{name}")
     public Game findGameByName(@PathVariable String name){
         return gameService.findGameByName(name);
     }
 
+    @CrossOrigin
     @DeleteMapping("deleteGame/{gameId}")
     public boolean deleteGame(@PathVariable int gameId){
         gameService.deleteGame(gameId);
@@ -43,6 +48,7 @@ public class GameController {
         return true;
     }
 
+    @CrossOrigin
     @PutMapping("updateGame/{gameId}")
     public Game updateGame(@PathVariable int gameId, @RequestBody Game game){
         return gameService.saveGame(game);
