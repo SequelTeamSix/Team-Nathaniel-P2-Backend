@@ -36,22 +36,27 @@ public class GameService {
         gameRepository.deleteByGameId(gameId);
     }
 
-    public void updateGame(Game game){
+    public Game updateGame(int gameId, Game game){
+        Game oldGame = gameRepository.findById(gameId);
         //if game is in DB, update the requested info based on provided
-        if(gameRepository.findAll().contains(game))
-        {
-            game.setGameId(game.getGameId());
-            game.setTitle(game.getTitle());
-            game.setReleaseDate(game.getReleaseDate());
-            game.setGamePrice(game.getGamePrice());
-            game.setNumPlayers(game.getNumPlayers());
-            game.setOnline(game.isOnline());
-            game.setBoxArt(game.getBoxArt());
-
+        if (oldGame != null) {
+            oldGame.setGamePrice(game.getGamePrice());
+            oldGame.setOnline(game.isOnline());
+            oldGame.setNumPlayers(game.getNumPlayers());
+            if (game.getTitle() != null) {
+                oldGame.setTitle(game.getTitle());
+            }
+            if (game.getBoxArt() != null) {
+                oldGame.setBoxArt(game.getBoxArt());
+            }
+            if (game.getReleaseDate() != null) {
+                oldGame.setReleaseDate(game.getReleaseDate());
+            }
+            return saveGame(oldGame);
         }
         //game isn't in DB, go ahead and create one with provided info.
         else {
-            saveGame(game);
+            return saveGame(game);
         }
     }
 }

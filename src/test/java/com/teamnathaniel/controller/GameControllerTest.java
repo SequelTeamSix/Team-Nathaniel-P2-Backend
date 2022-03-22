@@ -1,6 +1,7 @@
 package com.teamnathaniel.controller;
 
 import com.teamnathaniel.model.Game;
+import com.teamnathaniel.model.Purchases;
 import com.teamnathaniel.service.GameService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -109,5 +110,16 @@ class GameControllerTest {
                 .andDo(print())
                 .andExpect(status().isOk());
         assertTrue(deleteCalled);
+    }
+
+    @Test
+    void updateGame() throws Exception {
+        Mockito.when(sErViCe.updateGame(any(Integer.class), any(Game.class))).thenReturn(halo);
+        this.mockMvc.perform(put("/updateGame/0")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"title\":\"Halo\",\"releaseDate\":\"also 2000s ish?\",\"gamePrice\":50,\"numPlayers\":4,\"online\":true}"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().json("{\"title\":\"Halo\",\"releaseDate\":\"also 2000s ish?\",\"gamePrice\":50,\"numPlayers\":4,\"online\":true}"));
     }
 }
