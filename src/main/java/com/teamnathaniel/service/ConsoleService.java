@@ -40,15 +40,29 @@ public class ConsoleService {
         Console oldConsole = consoleRepository.findById(characterId);
         //if console is in DB, update the requested info based on provided
         if (oldConsole != null) {
-            console.setConsoleId(console.getConsoleId());
             if (console.getConsoleName() != null) {
                 oldConsole.setConsoleName(console.getConsoleName());
             }
             if (console.getReleaseDate() != null) {
-                oldConsole.setReleaseDate(oldConsole.getReleaseDate());
+                oldConsole.setReleaseDate(console.getReleaseDate());
             }
+            if (console.getGame() != null) {
+                oldConsole.setGame(console.getGame());
+            }
+            if (console.getConsoleFeature() != null) {
+                oldConsole.setConsoleFeature(console.getConsoleFeature());
+            }
+            if (console.getLogo() != null) {
+                oldConsole.setLogo(console.getLogo());
+            }
+            if (console.getPicture() != null) {
+                oldConsole.setPicture(console.getPicture());
+            }
+            return consoleRepository.save(oldConsole);
         }
         // console isn't in DB, go ahead and create one with provided info.
-        return saveConsole(console);
+        else {
+            return consoleRepository.save(console); // TODO decide if we should really be allowing users to update a console that doesn't exist
+        }
     }
 }
