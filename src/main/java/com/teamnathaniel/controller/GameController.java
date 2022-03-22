@@ -51,7 +51,7 @@ public class GameController {
     @CrossOrigin
     @PutMapping("updateGame/{gameId}")
     public Game updateGame(@PathVariable int gameId, @RequestBody Game game){
-        return gameService.saveGame(game);
+        return gameService.updateGame(gameId, game);
     }
 
 }
