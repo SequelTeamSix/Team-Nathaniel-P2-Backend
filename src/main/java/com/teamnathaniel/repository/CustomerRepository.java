@@ -19,4 +19,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     Customer save(Customer customer);
 
     void deleteByCustomerId(int customerId);
+
+    @Query("from Customer where username = :username and password = :password")
+    Customer getCustomerCredentials(String username, String password);
 }
