@@ -43,6 +43,12 @@ public class CustomerController {
     }
 
     @CrossOrigin
+    @PostMapping("login")
+    public Customer customerLogin(@RequestBody Customer customer){
+        return customerService.customerLogin(customer);
+    }
+
+    @CrossOrigin
     @PutMapping("updateCustomer/{customerId}")
     public Customer updateCustomer(@PathVariable int customerId, @RequestBody Customer customer){
         return customerService.updateCustomer(customerId, customer);

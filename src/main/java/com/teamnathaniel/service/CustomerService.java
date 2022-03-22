@@ -3,21 +3,30 @@ package com.teamnathaniel.service;
 import com.teamnathaniel.model.Customer;
 import com.teamnathaniel.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+
 import org.springframework.stereotype.Component;
 
+import java.security.MessageDigest;
+import java.nio.charset.StandardCharsets;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.List;
+
+
 
 @Component
 public class CustomerService {
+    @PersistenceContext
+    EntityManager em;
+
     CustomerRepository customerRepository;
-    PasswordEncoder passwordEncoder;
+
 
     @Autowired
     public CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
-        this.passwordEncoder = new BCryptPasswordEncoder();
+
     }
 
     public List<Customer> getAllCustomers(){
@@ -25,10 +34,9 @@ public class CustomerService {
     }
 
     public Customer saveCustomer(Customer customer){
-        //Encoding user password using BCrypt
-        String encodedPassword = this.passwordEncoder.encode(customer.getPassword());
-        customer.setPassword(encodedPassword);
-
+        //Encoding user password using MessageDigest
+        String hashPassword = hashPassword(customer.getPassword());
+        customer.setPassword(hashPassword);
         return customerRepository.save(customer);
     }
 
@@ -40,6 +48,13 @@ public class CustomerService {
         customerRepository.deleteByCustomerId(customerId);
     }
 
+    public Customer customerLogin(Customer customer){
+        String hashPassword = hashPassword(customer.getPassword());
+        return customerRepository.getCustomerCredentials(customer.getUsername(),
+                hashPassword);
+    }
+
+    @Transactional
     public Customer updateCustomer(int customerId, Customer customer){
         Customer oldCustomer = customerRepository.findById(customerId);
         if(oldCustomer != null){
@@ -52,10 +67,26 @@ public class CustomerService {
                 customer.setUsername(customer.getUsername());
             }
             if(customer.getPassword() != null){
-                String encodedPassword = this.passwordEncoder.encode(customer.getPassword());
-                customer.setPassword(encodedPassword);
+                String hashPassword = hashPassword(customer.getPassword());
+                customer.setPassword(hashPassword);
+
             }
         }
-        return customerRepository.save(customer);
+        return em.merge(customer);
+    }
+    private String hashPassword(String plainPassword) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            md.update(plainPassword.getBytes(StandardCharsets.UTF_8));
+            byte byteData[] = md.digest();
+            StringBuilder sb = new StringBuilder();
+            for(int x = 0; x < byteData.length; x++) {
+                sb.append(Integer.toString((byteData[x] & 0xff) + 0x100, 16).substring(1));
+            }
+            return sb.toString();
+        } catch(Exception e) {
+            System.out.println("Error");
+            return null;
+        }
     }
 }
