@@ -35,11 +35,16 @@ public class PurchasesService {
     public Purchases updatePurchase(int purchaseId, Purchases purchases){
         Purchases oldPurchase = purchasesRepository.findById(purchaseId);
         if(oldPurchase != null){
-            purchases.setPurchasesId(purchases.getPurchasesId());
-
             if(purchases.getOrderDate() != null){
-                purchases.setOrderDate(purchases.getOrderDate());
+                oldPurchase.setOrderDate(purchases.getOrderDate());
             }
+            if (purchases.getCustomer() != null) {
+                oldPurchase.setCustomer(purchases.getCustomer());
+            }
+            if (purchases.getGameOrders() != null) {
+                oldPurchase.setGameOrders(purchases.getGameOrders());
+            }
+            return purchasesRepository.save(oldPurchase);
         }
         return purchasesRepository.save(purchases);
     }
