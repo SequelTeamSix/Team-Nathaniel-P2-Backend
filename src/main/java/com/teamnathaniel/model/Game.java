@@ -15,7 +15,6 @@ import java.util.Set;
 @NoArgsConstructor
 @Data
 @ToString
-//tentatively include json identity, maybe
 public class Game {
 
     @Id
