@@ -13,7 +13,6 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @ToString
-//tentatively include json identity, maybe
 public class Series {
 
     @Id

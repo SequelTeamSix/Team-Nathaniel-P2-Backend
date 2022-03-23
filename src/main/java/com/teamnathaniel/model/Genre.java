@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @ToString
-//tentatively include json identity, maybe
+
 public class Genre {
 
     @Id
