@@ -75,6 +75,15 @@ class CustomerServiceTest {
     }
 
     @Test
+    void hashErrorsOnNullPassword() {
+        Mockito.when(rEpOsItOrY.save(any(Customer.class))).then(invocationOnMock -> {
+            return invocationOnMock.getArgument(0, Customer.class);
+        });
+        customer.setPassword(null);
+        assertEquals(subject.saveCustomer(customer).getPassword(), null);
+    }
+
+    @Test
     void findCustomerById() {
         Mockito.when(rEpOsItOrY.findById(0)).thenReturn(customer);
         assertEquals(subject.findCustomerById(0), customer);
