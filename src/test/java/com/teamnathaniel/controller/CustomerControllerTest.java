@@ -93,4 +93,15 @@ class CustomerControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().json("{\"name\": \"Steve Buscemi\", \"username\": \"steve\", \"password\": \"password\"}"));
     }
+
+    @Test
+    void customerLogin() throws Exception {
+        Mockito.when(sErViCe.customerLogin(any(Customer.class))).thenReturn(steveBuscemi);
+        this.mockMvc.perform(post("/login")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"name\": \"Steve Buscemi\", \"username\": \"steve\", \"password\": \"password\"}"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().json("{\"name\": \"Steve Buscemi\", \"username\": \"steve\", \"password\": \"password\"}"));
+    }
 }
