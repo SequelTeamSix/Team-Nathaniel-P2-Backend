@@ -34,7 +34,7 @@ public class Series {
     @JsonIgnoreProperties("series")
     private List<Character> character;
 
-    @OneToMany(mappedBy = "gameId")
+    @OneToMany(mappedBy = "series")
     @JsonIgnoreProperties({"console", "gameFeatures", "series"})
     private List<Game> game;
 }
