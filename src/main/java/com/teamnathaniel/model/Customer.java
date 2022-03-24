@@ -1,6 +1,7 @@
 package com.teamnathaniel.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,10 +20,13 @@ import javax.persistence.*;
 public class Customer {
 
     @Id
+    @GeneratedValue
+    //@Column(name = "customer_id")
     private int customerId;
-    @Column
+    @Column(unique = true)
     private String username;
     @Column
+    @JsonIgnore
     private String password;
     @Column
     private String name;

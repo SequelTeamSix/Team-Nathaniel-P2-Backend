@@ -34,7 +34,11 @@ public class CustomerService {
     }
 
     public Customer saveCustomer(Customer customer){
-        //Encoding user password using MessageDigest
+        Customer customer1 =  customerRepository.findByUsername(customer.getUsername());
+        if(customer1 !=  null)
+        {
+            return customer1;
+        }
         String hashPassword = hashPassword(customer.getPassword());
         customer.setPassword(hashPassword);
         return customerRepository.save(customer);
