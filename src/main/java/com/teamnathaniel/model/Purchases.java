@@ -29,7 +29,6 @@ public class Purchases {
     @JoinColumn(name = "customerId")
     private Customer customer;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "gameOrderId")
+    @OneToMany(mappedBy = "purchases")
     private List<GameOrder> gameOrders;
 }
