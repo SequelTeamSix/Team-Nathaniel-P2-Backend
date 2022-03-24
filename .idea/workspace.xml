@@ -6,18 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="954de9a8-9f30-4a03-8f8f-b9efa67f0167" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/ConsoleFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/ConsoleFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/GameFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/GameFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/GameOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/GameOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Genre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Purchases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Purchases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Series.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Series.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/SeriesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/SeriesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/CharacterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/CharacterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/teamnathaniel/service/CustomerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
