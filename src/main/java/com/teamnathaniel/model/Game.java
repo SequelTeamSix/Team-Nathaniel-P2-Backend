@@ -47,8 +47,7 @@ public class Game {
     @JsonIgnoreProperties({"game","consoleFeature"})
     private List<Console> console;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "gameFeatureId")
+    @OneToMany(mappedBy = "game")
     @JsonIgnoreProperties("game")
     private List<GameFeature> gameFeatures;
 }
