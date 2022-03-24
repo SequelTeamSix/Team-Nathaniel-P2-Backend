@@ -26,7 +26,6 @@ public class Customer {
     @Column(unique = true)
     private String username;
     @Column
-    @JsonIgnore
     private String password;
     @Column
     private String name;
