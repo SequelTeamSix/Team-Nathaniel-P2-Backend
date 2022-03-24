@@ -32,5 +32,4 @@ public class Purchases {
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "gameOrderId")
     private List<GameOrder> gameOrders;
-
 }
