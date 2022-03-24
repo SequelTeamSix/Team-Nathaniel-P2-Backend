@@ -21,7 +21,7 @@ public class Customer {
 
     @Id
     @GeneratedValue
-    //@Column(name = "customer_id")
+
     private int customerId;
     @Column(unique = true)
     private String username;

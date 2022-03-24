@@ -20,6 +20,7 @@ import java.util.List;
 public class Purchases {
 
     @Id
+    @GeneratedValue
     private int purchasesId;
     @Column
     private String orderDate;
