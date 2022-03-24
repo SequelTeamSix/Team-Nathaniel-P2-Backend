@@ -2,6 +2,7 @@ package com.teamnathaniel.service;
 
 import com.teamnathaniel.model.Character;
 import com.teamnathaniel.repository.CharacterRepository;
+import com.teamnathaniel.repository.SeriesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,6 +11,9 @@ import java.util.List;
 @Component
 public class CharacterService {
     CharacterRepository characterRepository;
+
+    @Autowired
+    SeriesRepository seriesRepository;
 
     @Autowired
     public CharacterService(CharacterRepository characterRepository) {

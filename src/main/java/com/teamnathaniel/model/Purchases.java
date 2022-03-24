@@ -24,11 +24,11 @@ public class Purchases {
     @Column
     private String orderDate;
     //multiplicity relationship for User
-    @ManyToOne(fetch =  FetchType.EAGER)
+    @ManyToOne(fetch =  FetchType.LAZY)
     @JoinColumn(name = "customerId")
     private Customer customer;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "gameOrderId")
     private List<GameOrder> gameOrders;
 

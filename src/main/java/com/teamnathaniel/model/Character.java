@@ -1,6 +1,8 @@
 package com.teamnathaniel.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +18,6 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @ToString
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "characterName")
 public class Character {
 
     @Id
@@ -30,7 +31,8 @@ public class Character {
     @Column
     private String catchPhrase;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "seriesId")
+    @JsonIgnoreProperties("character")
     private List<Series> series;
 }
