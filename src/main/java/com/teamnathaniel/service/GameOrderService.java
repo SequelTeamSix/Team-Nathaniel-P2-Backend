@@ -35,12 +35,18 @@ public class GameOrderService {
     public GameOrder updateGameOrder(int gameOrderId, GameOrder gameOrder){
          GameOrder oldGameOrder = gameOrderRepository.findByGameOrderId(gameOrderId);
          if(oldGameOrder != null){
-             gameOrder.setGameOrderId(gameOrder.getGameOrderId());
-
-             if(gameOrder.getQuantity() != 0){
-                 gameOrder.setQuantity(gameOrder.getGameOrderId());
+             if(gameOrder.getQuantity() != 0){ // I was debating this conditional, but it makes sense. if you have 0, then it's not really a gameOrder and you should just delete it instead.
+                 oldGameOrder.setQuantity(gameOrder.getQuantity());
              }
+             if (gameOrder.getGame() != null) {
+                 oldGameOrder.setGame(gameOrder.getGame());
+             }
+             if (gameOrder.getPurchases() != null) {
+                 oldGameOrder.setPurchases(gameOrder.getPurchases());
+             }
+             return gameOrderRepository.save(oldGameOrder);
+         } else {
+             return gameOrderRepository.save(gameOrder);
          }
-         return gameOrderRepository.save(gameOrder);
     }
 }

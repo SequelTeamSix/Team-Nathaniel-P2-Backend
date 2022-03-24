@@ -81,31 +81,31 @@ class GameServiceTest {
     }
 
     @Test
-    void updateGame() { // TODO uncomment once you get Game update endpoint working.
-//        Mockito.when(rEpOsItOrY.findById(0)).thenReturn(fallout);
-//        Mockito.when(rEpOsItOrY.save(any(Game.class))).thenReturn(fallout);
-//        Game newFallout = new Game();
-//        newFallout.setTitle("Filloot");
-//        newFallout.setGamePrice(125);
-//        newFallout.setOnline(true);
-//        newFallout.setReleaseDate("12,500 B.C.");
-//        newFallout.setBoxArt("Flout.jpg");
-//        newFallout.setNumPlayers(3);
-//        assertEquals(subject.updateGame(0, newFallout), fallout);
-//        assertEquals(fallout.getTitle(), "Filloot");
-//        assertEquals(fallout.getGamePrice(), 125);
-//        assertEquals(fallout.isOnline(), true);
-//        assertEquals(fallout.getReleaseDate(), "12,500 B.C.");
-//        assertEquals(fallout.getBoxArt(), "Flout.jpg");
-//        assertEquals(fallout.getNumPlayers(), 3);
+    void updateGame() {
+        Mockito.when(rEpOsItOrY.findById(0)).thenReturn(fallout);
+        Mockito.when(rEpOsItOrY.save(any(Game.class))).thenReturn(fallout);
+        Game newFallout = new Game();
+        newFallout.setTitle("Filloot");
+        newFallout.setGamePrice(125);
+        newFallout.setOnline(true);
+        newFallout.setReleaseDate("12,500 B.C.");
+        newFallout.setBoxArt("Flout.jpg");
+        newFallout.setNumPlayers(3);
+        assertEquals(subject.updateGame(0, newFallout), fallout);
+        assertEquals(fallout.getTitle(), "Filloot");
+        assertEquals(fallout.getGamePrice(), 125);
+        assertEquals(fallout.isOnline(), true);
+        assertEquals(fallout.getReleaseDate(), "12,500 B.C.");
+        assertEquals(fallout.getBoxArt(), "Flout.jpg");
+        assertEquals(fallout.getNumPlayers(), 3);
     }
 
     @Test
-    void updateGameNoPrev() { // TODO uncomment once you fix the Game endpoint
-//        Mockito.when(rEpOsItOrY.findById(any(Integer.class))).thenReturn(null);
-//        Mockito.when(rEpOsItOrY.save(any(Game.class))).then(invocationOnMock -> {
-//            return invocationOnMock.getArgument(0, Game.class);
-//        });
-//        assertEquals(subject.updateGame(0, fallout), fallout);
+    void updateGameNoPrev() {
+        Mockito.when(rEpOsItOrY.findById(any(Integer.class))).thenReturn(null);
+        Mockito.when(rEpOsItOrY.save(any(Game.class))).then(invocationOnMock -> {
+            return invocationOnMock.getArgument(0, Game.class);
+        });
+        assertEquals(subject.updateGame(0, fallout), fallout);
     }
 }

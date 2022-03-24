@@ -35,11 +35,13 @@ public class GenreService {
     public Genre updateGenre(int genreId, Genre genre){
         Genre oldGenre = genreRepository.findByGenreId(genreId);
         if(oldGenre != null){
-            genre.setGenreId(genre.getGenreId());
-
             if(genre.getGenre() != null){
-                genre.setGenre(genre.getGenre());
+                oldGenre.setGenre(genre.getGenre());
             }
+            if (genre.getGame() != null) {
+                oldGenre.setGame(genre.getGame());
+            }
+            return genreRepository.save(oldGenre);
         }
         return genreRepository.save(genre);
     }

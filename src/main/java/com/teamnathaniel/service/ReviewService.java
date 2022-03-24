@@ -35,14 +35,18 @@ public class ReviewService {
     public Review updateReview(int reviewId, Review review){
         Review oldReview = reviewRepository.findById(reviewId);
         if(oldReview != null) {
-            review.setReviewId(review.getReviewId());
 
-            if (review.getReviewRating() != 0) {
-                review.setReviewId(review.getReviewId());
-            }
+            //   TODO A zero rating is valid, but we don't want to force api consumers to supply a rating every time
+            //    Maybe change the type of Rating from int to Integer?
+            oldReview.setReviewRating(review.getReviewRating());
+
             if (review.getReviewDescription() != null) {
-                review.setReviewDescription(review.getReviewDescription());
+                oldReview.setReviewDescription(review.getReviewDescription());
             }
+            if (review.getCustomer() != null) {
+                oldReview.setCustomer(review.getCustomer());
+            }
+            return reviewRepository.save(oldReview);
         }
             return reviewRepository.save(review);
     }
