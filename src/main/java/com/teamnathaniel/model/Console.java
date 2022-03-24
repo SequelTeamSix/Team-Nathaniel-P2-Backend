@@ -1,6 +1,7 @@
 package com.teamnathaniel.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @ToString
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "consoleName")
+
 public class Console {
 
     @Id
@@ -30,11 +31,13 @@ public class Console {
     @Column
     private String picture;
 
-    //check this out Ethan
+
     @ManyToMany(mappedBy = "console")
+    @JsonIgnoreProperties({"console", "series","gameFeatures"})
     private List<Game> game;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "consoleFeatureId")
+    @JsonIgnoreProperties("console")
     private List<ConsoleFeature> consoleFeature;
 }

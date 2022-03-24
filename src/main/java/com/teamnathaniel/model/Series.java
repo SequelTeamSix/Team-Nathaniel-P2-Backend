@@ -1,4 +1,7 @@
 package com.teamnathaniel.model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @ToString
+
 public class Series {
 
     @Id
@@ -25,7 +29,12 @@ public class Series {
     private String description;
 
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable
+    @JsonIgnoreProperties("series")
     private List<Character> character;
+
+    @OneToMany(mappedBy = "gameId")
+    @JsonIgnoreProperties({"console", "gameFeatures", "series"})
+    private List<Game> game;
 }

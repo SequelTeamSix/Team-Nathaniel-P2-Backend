@@ -1,6 +1,7 @@
 package com.teamnathaniel.repository;
 
 import com.teamnathaniel.model.Series;
+import com.teamnathaniel.model.Character;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -18,6 +19,8 @@ public interface SeriesRepository extends JpaRepository<Series, String> {
 
     @Query("from Series where seriesId = :id")
     Series findById(int id);
+
+    List<Series> findAllByCharacter(Character character);
 
     Series save(Series series);
 

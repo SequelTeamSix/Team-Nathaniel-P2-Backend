@@ -25,7 +25,7 @@ public class Review {
     @Column
     private String reviewDescription;
     //multiplicity relationship for User
-    @ManyToOne(fetch =  FetchType.EAGER)
+    @ManyToOne(fetch =  FetchType.LAZY)
     @JoinColumn(name = "customerId")
     private Customer customer;
 }

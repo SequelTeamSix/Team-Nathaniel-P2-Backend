@@ -1,5 +1,7 @@
 package com.teamnathaniel.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +15,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @ToString
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "consoleFeatureId")
 public class ConsoleFeature {
 
     @Id
@@ -22,7 +25,7 @@ public class ConsoleFeature {
     @Column
     private String body;
     //multiplicity relationship for Console
-    @ManyToOne(fetch =  FetchType.EAGER)
+    @ManyToOne(fetch =  FetchType.LAZY)
     @JoinColumn(name = "consoleId")
     private Console console;
 
