@@ -2,7 +2,7 @@
 
 ## Project Description
 
-A Java based web backend for a retail application selling retro video games. It queries the database for the characters, series, consoles, and games for all of them or specific ones based upon a number of criteria. The API uses JSON for all inputs as well as outputs. It is currently connected to the fron end application at [Retrovure Frontend](https://github.com/SequelTeamSix/Team-Nathaniel-P2-Frontend).
+A Java based web backend for a retail application selling retro video games. It queries the database for the characters, series, consoles, and games for all of them or specific ones based upon a number of criteria. The API uses JSON for all inputs as well as outputs. It is currently connected to the front end application at [Retrovure Frontend](https://github.com/SequelTeamSix/Team-Nathaniel-P2-Frontend).
 
 ## Technologies Used
 
